@@ -72,6 +72,7 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
                        ft = fm.beginTransaction();
                        Bundle bundle=new Bundle();
                        bundle.putSerializable("aCarACrime",aCarACrime);
+                       bundle.putString("plate",plate);
                        carPPInfoFragment.setArguments(bundle);
                        ft.add(R.id.a_car_pepole_fragment, carPPInfoFragment);
                        ft.commit();
@@ -80,6 +81,7 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
             }
         }
     };
+    String plate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +92,7 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
         initAction();
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            String plate = bundle.getString("plate");
+             plate = bundle.getString("plate");
             String plateType = bundle.getString("plateType");
             String img = bundle.getString("pic");
             Log.e("acap",plate+plateType+img);
