@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#F5F5F5"
+    android:layout_height="match_parent">
+<include layout="@layout/toobar"></include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/bkyj_img"
+                android:background="#aaaaaa"
+                android:layout_width="match_parent"
+                android:layout_height="209dp" />
+
+            <LinearLayout
+        android:layout_marginTop="7dp"
+        android:orientation="vertical"
+        android:elevation="3dp"
+        android:layout_gravity="center"
+        android:background="#fff"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="17dp"
+            android:textSize="16dp"
+            android:textColor="#1976D2"
+            android:text="车辆信息"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+    android:layout_marginTop="13dp"
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+    <LinearLayout
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="14dp"
+    android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车牌号 : "
+            android:textColor="#999999"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/bkyj_plate"
+            android:textColor="#353535"
+            android:textSize="14dp"
+            android:text="鲁B256KT "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+        <View
+            android:layout_marginTop="13dp"
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <LinearLayout
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="识别车型 : "
+                android:textColor="#999999"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/bkyj_model"
+                android:textColor="#353535"
+                android:textSize="14dp"
+                android:text="大众 - 捷达 - 2012 "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="13dp"
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <LinearLayout
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="车身颜色 : "
+                android:textColor="#999999"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/bkyj_color"
+                android:textColor="#353535"
+                android:textSize="14dp"
+                android:text="黑色 "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="13dp"
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <LinearLayout
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发现时间 : "
+                android:textColor="#999999"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/bkyj_findtime"
+                android:textColor="#353535"
+                android:textSize="14dp"
+                android:text="2016 - 06 - 27  16 : 28 : 35 "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="13dp"
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <LinearLayout
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发现位置 : "
+                android:textColor="#999999"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/bkyj_findplace"
+                android:textColor="#353535"
+                android:textSize="14dp"
+                android:text="井冈山路富春江路口 "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="13dp"
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <LinearLayout
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="行驶方向 : "
+                android:textColor="#999999"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/bkyj_direction"
+                android:textColor="#353535"
+                android:textSize="14dp"
+                android:text="向南行驶 "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="13dp"
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <LinearLayout
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="车速 : "
+                android:textColor="#999999"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/bkyj_speed"
+                android:textColor="#353535"
+                android:textSize="14dp"
+                android:text="80KM/H "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="7dp"
+                android:orientation="vertical"
+                android:elevation="3dp"
+                android:layout_gravity="center"
+                android:background="#fff"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginTop="17dp"
+                    android:layout_marginLeft="17dp"
+                    android:textSize="16dp"
+                    android:textColor="#1976D2"
+                    android:text="布控单信息"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_marginTop="13dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="布控申请人 : "
+                        android:textColor="#999999"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/bkyj_alarm_people"
+                        android:textColor="#353535"
+                        android:textSize="14dp"
+                        android:text="刘泽明 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="13dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="电话 : "
+                        android:textColor="#999999"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/bkyj_alarm_tel"
+                        android:textColor="#353535"
+                        android:textSize="14dp"
+                        android:text="13862145632"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="13dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="布控单号 : "
+                        android:textColor="#999999"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/bkyj_alarm_text"
+                        android:textColor="#353535"
+                        android:textSize="14dp"
+                        android:text="11 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="13dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="布控类型 : "
+                        android:textColor="#999999"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/bkyj_alarm_description"
+                        android:textColor="#353535"
+                        android:textSize="14dp"
+                        android:text="精准车牌布控"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="13dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="车辆信息 : "
+                        android:textColor="#999999"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/bkyj_alarm_carinfo"
+                        android:textColor="#353535"
+                        android:textSize="14dp"
+                        android:text="鲁V DT327;鲁G 57842 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="13dp"
+                    android:background="#eeeeee"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="布控原因 : "
+                        android:textColor="#999999"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/bkyj_alarm_reason"
+                        android:textColor="#353535"
+                        android:textSize="14dp"
+                        android:text="测试 "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <Button
+               android:id="@+id/bkyj_alarm_butto"
+                android:layout_marginBottom="15dp"
+                android:textSize="16dp"
+                android:textColor="#fff"
+                android:elevation="2dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="查看过车记录"
+                android:background="#1976D2"
+                android:layout_width="345dp"
+                android:layout_height="49dp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

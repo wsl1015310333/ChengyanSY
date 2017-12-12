@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_a__car_pepole"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+
+    tools:context="searchproject.php.yisa.chengyansy.A_Car_pepoleActivity">
+    <include layout="@layout/toobar"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="91dp"
+          android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:background="@drawable/wuquanxian"
+            android:layout_width="110dp"
+            android:layout_height="110dp" />
+
+        <TextView
+            android:layout_marginTop="18dp"
+        android:text="对不起！您暂时没有相关权限查看一车一档"
+        android:textColor="#999999"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:elevation="2dp"
+            android:background="#ffffff"
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/a_car_pepole_carimg"
+                android:background="#1976d2"
+                android:layout_width="match_parent"
+                android:layout_height="208dp" />
+            <!--<TextView-->
+                <!--android:id="@+id/a_car_pepole_cartv"-->
+             <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_gravity="center|center_vertical"-->
+                <!--android:text="鲁Y3807（蓝色）"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="30dp" />-->
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+           android:elevation="1dp"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="78dp">
+            <LinearLayout
+                android:id="@+id/a_car_pepole_lginfo"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/a_car_pepole_lginfo_img"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/jibenblue"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+                <TextView
+                    android:id="@+id/a_car_pepole_lginfo_tv"
+                    android:textColor="#1976D2"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="登记信息"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/a_car_pepole_ppCrime"
+                android:tooltipText="3"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                 <ImageView
+                     android:id="@+id/a_car_pepole_ppCrime_img"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/weifa"
+                android:layout_width="24dp"
+                android:layout_height="19dp" />
+
+                <TextView
+                    android:id="@+id/a_car_pepole_ppCrime_tv"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="车主违法信息"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_car_pepole_carCrime"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/a_car_pepole_carCrime_img"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/weizhang"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+                <TextView
+                    android:id="@+id/a_car_pepole_carCrime_tv"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="违章信息"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ProgressBar
+                android:id="@+id/a_car_pepole_progressbar"
+                android:minWidth="40dp"
+                android:maxHeight="42dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="160dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp" />
+            <FrameLayout
+                android:visibility="gone"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/a_car_pepole_fragment"
+                android:background="#f5f5f5"
+                android:layout_marginTop="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

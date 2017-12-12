@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+
+ android:background="#F5F5F5"   android:layout_height="match_parent">
+<include layout="@layout/toobar"></include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">d
+        <ImageView
+            android:id="@+id/zbyjr_img"
+            android:background="#aaaaaa"
+            android:layout_width="match_parent"
+            android:layout_height="208dp" />
+        <LinearLayout
+            android:layout_marginTop="7dp"
+            android:orientation="vertical"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            android:background="#fff"
+            android:layout_width="363dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车        牌 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+                <TextView
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="鲁B256KT"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/zbyjr_plate_number" />
+                <LinearLayout
+                    android:id="@+id/alarm_carinfo_acap"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    >
+                    <ImageButton
+                        android:background="@drawable/dang"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_marginTop="20px"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="登记车型 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/zbyjr_Randmodel"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="大众 - 捷达 - 2012 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="15dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="识别车型 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/zbyjr_model"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="大众 - 帕萨特 - 2012 ,2014"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="13dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预警时间  : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/zbyjr_time"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="2016 - 06 - 27  16 : 28 : 35 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预警位置 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/zbyjr_place"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                   android:text="井冈山路富春江路口"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="行驶方向 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+
+                    android:id="@+id/zbyjr_direction"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="向南行驶 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="10dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预警原因 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/zbyjr_reason"
+                    android:textColor="#FE4D3D"
+                    android:textSize="14dp"
+                    android:text="套牌车 ; 夜间遮挡面部 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/zbyjr_button"
+            android:textSize="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:background="#1976D2"
+            android:textColor="#fff"
+            android:text="查看过车记录"
+            android:layout_width="345dp"
+            android:layout_height="59dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"></LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

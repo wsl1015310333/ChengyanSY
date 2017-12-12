@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+
+    <ImageButton
+
+        android:id="@+id/login_background_view"
+        android:layout_marginTop="@dimen/login_background_view_Top"
+        android:layout_marginLeft="@dimen/login_background_view_marginLeft"
+        android:background="@drawable/login_view"
+        android:layout_width="@dimen/login_background_view_width"
+        android:layout_height="@dimen/login_background_view_height" />
+
+    <Button
+
+        android:id="@+id/login_imgbtn"
+        android:background="#E1E5E8"
+        android:layout_marginTop="@dimen/login_imgbtn_marginTop"
+        android:layout_width="@dimen/login_imgbtn_width"
+        android:layout_height="@dimen/login_imgbtn_height"
+        android:text="@string/login_button"
+        android:textSize="@dimen/login_imgbtn_textsize"
+        android:textColor="#1976D2"
+        android:layout_below="@+id/login_backgroundAnd_password"
+        android:layout_alignLeft="@+id/login_backgroundAnd_password" />
+
+    <RelativeLayout
+        android:id="@+id/login_background"
+        android:layout_width="@dimen/login_background_width"
+        android:layout_height="@dimen/login_background_height"
+        android:background="@drawable/login_editaccount_background"
+        android:layout_marginTop="@dimen/login_background_marginTop"
+        android:layout_below="@+id/login_background_view"
+        android:layout_alignLeft="@+id/login_backgroundAnd_password">
+        <ImageView
+            android:background="@drawable/login_username"
+            android:id="@+id/Login_edith_logo"
+            android:layout_width="@dimen/Login_edith_logo_width"
+            android:layout_height="@dimen/Login_edith_logo_height"
+            android:layout_marginLeft="@dimen/Login_edith_logo_marginLeft"
+            android:layout_marginTop="@dimen/Login_edith_logo_marginTop"
+            android:layout_alignParentLeft="true"
+
+
+            />
+        <EditText
+            android:id="@+id/login_edith"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:singleLine="true"
+            android:paddingLeft="@dimen/login_edith_paddingLeft"
+            android:textSize="@dimen/login_edith_textSize"
+            android:textColorHint="#beFFFFFF"
+            android:layout_toRightOf="@+id/Login_edith_logo"
+            android:hint="@string/login_edith_account"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+     android:id="@+id/login_backgroundAnd_password"
+        android:layout_width="@dimen/login_background_width"
+        android:layout_height="@dimen/login_background_height"
+        android:background="@drawable/login_editaccount_background"
+        android:layout_marginTop="@dimen/login_backgroundAnd_password_marginTop"
+        android:layout_below="@+id/login_background"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:background="@drawable/login_password"
+            android:layout_width="@dimen/login_edith_passwordlogo_width"
+            android:layout_height="@dimen/login_edith_passwordlogo_heigth"
+            android:layout_marginLeft="@dimen/Login_edith_logo_marginLeft"
+            android:layout_marginTop="@dimen/Login_edith_logo_marginTop"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/login_edith_passwordlogo"
+            />
+        <EditText
+
+            android:inputType="textPassword"
+            android:id="@+id/login_passWord"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:singleLine="true"
+            android:paddingLeft="@dimen/login_edith_paddingLeft"
+            android:textSize="@dimen/login_edith_textSize"
+            android:textColorHint="#beFFFFFF"
+            android:hint="@string/login_edith_password"
+            android:layout_toRightOf="@+id/login_edith_passwordlogo"
+            />
+      />
+    </RelativeLayout>
+
+    <!--<include-->
+        <!--android:id="@+id/title"-->
+        <!--layout="@layout/toobar"-->
+        <!--&gt;-->
+    <!--</include>-->
+</RelativeLayout>

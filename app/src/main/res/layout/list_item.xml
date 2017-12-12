@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+android:paddingTop="10dp"
+       android:background="#EDF6FF"
+    android:paddingLeft="14dp"
+        android:id="@+id/tvLetters"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:text="A"
+        android:textColor="#1976D2"
+
+        android:textSize="14dp"/>
+
+    <TextView
+android:paddingTop="20dp"
+        android:textColor="#353535"
+        android:paddingLeft="27dp"
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:text="阿三"
+        android:textSize="12dp"/>
+
+    <View
+        android:background="#F6F6F6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        ></View>
+</LinearLayout>

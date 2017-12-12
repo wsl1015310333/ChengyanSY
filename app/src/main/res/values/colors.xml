@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_window">#FFE5E5E5</color>
+    <color name="Indigo_colorPrimaryDark">#303f9f</color>
+    <color name="Indigo_colorPrimary">#3f51b5</color>
+    <color name="Indigo_nav_color">#4675FF</color>
+    <color name="Tabs_color">#353535</color>
+    <color name="Tabs_color_black">#222</color>
+    <color name="white">#ffffff</color>
+    <color name="btn_yes">#1976D2</color>
+    <color name="btn_no">#ffffff</color>
+    <color name="img_tv">#353535</color>
+    <color name="lettertext">#969797</color>
+    <color name="letterclick">#333333</color>
+    <color name="black">#000000</color>
+</resources>

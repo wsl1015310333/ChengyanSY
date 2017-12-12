@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_marginTop="8dp"
+    android:background="#fff"
+    android:elevation="3dp"
+    android:layout_gravity="center"
+    android:layout_width="345dp"
+    android:layout_height="139dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/titleTextInput"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          >
+
+            <EditText
+                android:layout_marginTop="-12dp"
+                android:textColorHint="#1976D2"
+                android:paddingLeft="2dp"
+                android:textSize="14dp"
+                android:id="@+id/et_mobile"
+                android:textColor="#353535"
+                android:layout_width="275dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:inputType="number"
+                android:hint="请输入车牌号码"/>
+        </android.support.design.widget.TextInputLayout>
+            <ImageButton
+                android:layout_marginTop="10dp"
+                android:id="@+id/editext_canel"
+                android:layout_marginLeft="-10dp"
+                android:background="@drawable/canel_img"
+                android:layout_gravity="center"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                />
+        </LinearLayout>
+<LinearLayout
+    android:id="@+id/search_brand"
+android:layout_marginTop="-6dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textColor="#aaaaaa"
+android:id="@+id/fragment_carshowTitle"
+        android:visibility="invisible"
+        android:layout_marginLeft="22dp"
+        android:text="请输入车型"
+        android:textSize="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:textColor="#353535"
+        android:id="@+id/search_brandText"
+        android:textSize="14dp"
+        android:layout_marginLeft="22dp"
+        android:hint="请输入车型"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+    <ImageButton
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/brand_canel"
+        android:layout_marginLeft="23px"
+        android:background="@drawable/canel_img"
+        android:layout_gravity="center"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        />
+</LinearLayout>
+</LinearLayout>
+<View
+    android:layout_marginTop="2dp"
+    android:layout_marginLeft="20dp"
+    android:background="#777"
+    android:layout_width="267dp"
+    android:layout_height="1dp"
+    />
+<LinearLayout
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="87dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="12dp"
+        android:textColor="#999999"
+        android:layout_gravity="center"
+
+        android:text="不想输入?试试拍照查车~"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/searchcar_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginLeft="15px"
+            android:background="@drawable/camera"
+
+            android:layout_width="23dp"
+            android:layout_height="20dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
+
+
+</LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_marginLeft="17dp"
+        android:id="@+id/time"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:layout_marginTop="7dp"
+        android:layout_centerHorizontal="true"
+        android:background="#fff"
+        android:layout_width="345dp"
+        android:layout_height="126dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/searchca_firstTime_01"
+                android:layout_marginLeft="17dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginTop="17dp"
+                    android:text="请选择起始日期"
+                    android:textColor="#1976D2"
+                    android:textSize="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+<LinearLayout
+    android:layout_marginTop="7dp"
+    android:orientation="horizontal"
+    android:layout_width="178dp"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/searchca_firstTimeEditext_01"
+        android:textColor="#969797"
+        android:textSize="14dp"
+        android:text="2017-07-26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginLeft="99dp"
+        android:background="@drawable/arrow"
+        android:layout_width="6dp"
+        android:layout_height="5dp" />
+</LinearLayout>
+                <View
+                    android:layout_marginTop="7dp"
+                    android:background="#1976D2"
+                    android:layout_width="178dp"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/searchca_firstTime_02"
+                android:layout_marginLeft="17dp"
+                android:orientation="vertical"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:layout_marginTop="17dp"
+                    android:text="       "
+                    android:textColor="#1976D2"
+                    android:textSize="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:layout_width="147dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/searchca_firstTimeEditext_02"
+                        android:textColor="#969797"
+                        android:textSize="14dp"
+                        android:text="04:30:25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_marginLeft="43dp"
+                        android:background="@drawable/arrow"
+                        android:layout_width="6dp"
+                        android:layout_height="5dp" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="7dp"
+                    android:background="#1976D2"
+                    android:layout_width="178dp"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/searchca_endTime_01"
+                android:layout_marginLeft="17dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:layout_marginTop="10dp"
+                    android:text="请选择结束日期"
+                    android:textColor="#1976D2"
+                    android:textSize="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/searchca_endTimeEditext_01"
+                        android:textColor="#969797"
+                        android:textSize="14dp"
+                        android:text="2017-07-26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_marginLeft="99dp"
+                        android:background="@drawable/arrow"
+                        android:layout_width="6dp"
+                        android:layout_height="5dp" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="7dp"
+                    android:background="#1976D2"
+                    android:layout_width="178dp"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/searchca_endTime_02"
+                android:layout_marginLeft="17dp"
+                android:orientation="vertical"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:layout_marginTop="10dp"
+                    android:text="       "
+                    android:textColor="#1976D2"
+                    android:textSize="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                  android:layout_marginTop="1dp"
+                    android:orientation="horizontal"
+                    android:layout_width="148dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/searchca_endTimeEditext_02"
+                        android:textColor="#969797"
+                        android:textSize="14dp"
+                        android:text="04:30:25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="43dp"
+                        android:background="@drawable/arrow"
+                        android:layout_width="6dp"
+                        android:layout_height="5dp" />
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="7dp"
+                    android:background="#1976D2"
+                    android:layout_width="148dp"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <Button
+        android:layout_below="@+id/time"
+        android:id="@+id/button_query"
+        android:textColor="#fff"
+        android:background="#1976D2"
+        android:layout_marginTop="15dp"
+        android:textSize="16dp"
+        android:layout_marginLeft="8dp"
+        android:text="查  询"
+        android:layout_width="345dp"
+        android:layout_height="48dp" />
+        <android.inputmethodservice.KeyboardView
+            android:elevation="2dp"
+            android:id="@+id/keyboard_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingLeft="1dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="8dp"
+            android:layout_alignParentBottom="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="#999999"
+            android:keyBackground="@drawable/btn_keyboard_key"
+            android:keyTextSize="10sp"
+            android:keyTextColor="#000"
+            />
+    </RelativeLayout>
+</LinearLayout>

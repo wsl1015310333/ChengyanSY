@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="278dp"
+android:background="@drawable/showdialog_cirle"
+    android:layout_height="122dp"
+    android:layout_margin="40dp">
+    <!--android:layout_marginTop="184dp"-->
+    <!--android:layout_gravity="center"-->
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="278dp"
+        android:layout_height="122dp">
+     <ImageView
+         android:layout_marginTop="23dp"
+         android:layout_gravity="center"
+         android:id="@+id/image_loading"
+         android:layout_width="54dp"
+         android:layout_height="54dp" />
+        <TextView
+            android:id="@+id/showText"
+            android:layout_marginTop="14dp"
+            android:text="正在加载中···"
+android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

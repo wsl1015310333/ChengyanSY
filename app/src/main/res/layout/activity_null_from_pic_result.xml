@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toobar"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/camrea_info"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="82dp" >
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14dp"
+                        android:textColor="#353535"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="车牌："
+                        />
+                    <TextView
+                        android:id="@+id/searchCar_Result_plate_numberr"
+                        android:textSize="14dp"
+                        android:textColor="#353535"
+                        android:text="鲁BA248"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14dp"
+                        android:textColor="#353535"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查询时段："
+                        />
+                    <TextView
+                        android:id="@+id/searchCar_firstTime"
+                        android:textSize="14dp"
+                        android:textColor="#353535"
+                        android:text="17-04-29 10:10:10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="14dp"
+                        android:textColor="#353535"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 至 "
+                        />
+                    <TextView
+                        android:id="@+id/searchCar_endTime"
+                        android:textSize="14dp"
+                        android:textColor="#353535"
+                        android:text="17-04-29 10:10:10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14dp"
+                        android:textColor="#353535"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="共 "
+                        />
+                    <TextView
+                        android:id="@+id/searchCar_result"
+                        android:textSize="14dp"
+                        android:textColor="#FE4D3D"
+                        android:text="88"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="14dp"
+                        android:textColor="#353535"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 条结果"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/camrea_infoImg"
+
+            android:elevation="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="98dp">
+            <ImageView
+                android:layout_marginTop="14dp"
+                android:id="@+id/car_image_url"
+                android:layout_marginLeft="19dp"
+
+                android:layout_width="108dp"
+                android:layout_height="74dp" />
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#999999"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="车牌 ："
+                        />
+                    <TextView
+                        android:id="@+id/carinfo_plate"
+                        android:textColor="#353535"
+                        android:textSize="12dp"
+                        android:text="鲁BA249"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#999999"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="车型 ："
+                        />
+                    <TextView
+                        android:id="@+id/carinfo_model"
+                        android:textColor="#353535"
+                        android:textSize="12dp"
+                        android:text="大众 - 途观 - 2014"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10px"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#999999"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="位置 ："
+                        />
+                    <TextView
+                        android:id="@+id/carinfo_locationName"
+                        android:textColor="#353535"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:singleLine="true"
+                        android:scrollbars="horizontal"
+                        android:textSize="12dp"
+                        android:text="新兴街正阳路路口"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="#999999"
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="时间 ："
+                        />
+                    <TextView
+                        android:id="@+id/carinfo_captureTime"
+                        android:textColor="#353535"
+                        android:textSize="12dp"
+                        android:text="2017 - 06 - 21  21 : 59 : 07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+
+            android:id="@+id/btnsearchcar_defult"
+            android:elevation="3dp"
+            android:textColor="#fff"
+            android:text="默认"
+            android:layout_marginLeft="15px"
+            android:background="#1976D2"
+            android:layout_width="110dp"
+            android:layout_height="29dp" />
+        <Button
+            android:id="@+id/btnsearchcar_kakou"
+            android:elevation="3dp"
+            android:textColor="#999999"
+            android:text="按卡口分组"
+            android:layout_marginLeft="8dp"
+            android:background="#fff"
+            android:layout_width="110dp"
+            android:layout_height="29dp" />
+        <Button
+            android:id="@+id/btnsearchcar_model"
+            android:elevation="3dp"
+            android:textColor="#999999"
+            android:text="按车型分组"
+            android:layout_marginLeft="8dp"
+            android:background="#fff"
+            android:layout_width="110dp"
+            android:layout_height="29dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:id="@+id/nodata"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/nodataimg"
+                android:layout_marginTop="41dp"
+                android:layout_marginLeft="124dp"
+                android:background="@drawable/nodata"
+                android:layout_width="112dp"
+                android:layout_height="112dp" />
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="120dp"
+                android:textColor="#999999"
+                android:textSize="12dp"
+                android:text="未找到符合条件的数据"
+                android:layout_below="@+id/nodataimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <FrameLayout
+            android:elevation="3dp"
+            android:id="@+id/searchcar_fragment_btn"
+            android:layout_marginTop="9dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></FrameLayout>
+    </RelativeLayout>
+</LinearLayout>

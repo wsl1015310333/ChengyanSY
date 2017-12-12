@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main2"
+    android:layout_width="278dp"
+    android:layout_height="122dp"
+    android:background="@drawable/showdialog"
+    android:orientation="vertical"
+    android:layout_marginLeft="45dp"
+
+    >
+
+    <!--<LinearLayout-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_width="278dp"-->
+    <!--android:layout_height="395dp">-->
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="44dp"
+android:textSize="14dp"
+        android:textColor="#000"
+     android:text="图片未识别！"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
+    <LinearLayout
+    android:layout_marginTop="18dp"
+        android:id="@+id/id_first"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+
+            android:background="#00ffffff"
+            android:text="确定"
+            android:textSize="14dp"
+            android:textColor="#1D19BB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button" />
+
+        <!--<View-->
+
+
+        <!--android:layout_marginTop="-3dp"-->
+        <!--android:background="#1D19BB"-->
+        <!--android:layout_width="54dp"-->
+        <!--android:layout_height="1dp"></View>-->
+    </LinearLayout>
+
+    <!--</LinearLayout>-->
+</LinearLayout>

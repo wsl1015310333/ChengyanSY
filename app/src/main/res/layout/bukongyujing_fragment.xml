@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <searchproject.php.yisa.chengyansy.view.ExpandLayout
+
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:id="@+id/bkyj_unread"
+        android:background="#af1976D2"
+        android:layout_width="match_parent"
+        android:layout_height="29dp">
+        <TextView
+            android:id="@+id/bkyj_alarm_warning_showText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:text="有3条新的预警消息点击刷新"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </searchproject.php.yisa.chengyansy.view.ExpandLayout>
+    <LinearLayout
+        android:id="@+id/bkyj_nodate"
+        android:layout_marginTop="71dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginLeft="124dp"
+            android:background="@drawable/nodata"
+            android:layout_width="112dp"
+            android:layout_height="112dp" />
+        <TextView
+android:layout_marginLeft="134dp"
+            android:layout_marginTop="18dp"
+            android:text="暂无告警信息"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bkyj_Recycerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</LinearLayout>

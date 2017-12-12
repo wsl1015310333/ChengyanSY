@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:id="@+id/alarm_set_warning"
+            android:layout_width="345dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#fff"
+            android:elevation="2dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="104dp"
+                android:background="@drawable/warning_r" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="9dp"
+                android:text="设置预警点位"
+                android:textColor="#353535"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+        <searchproject.php.yisa.chengyansy.view.ExpandLayout
+
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:id="@+id/zbyj_unread"
+            android:background="#af1976D2"
+            android:layout_width="match_parent"
+            android:layout_height="29dp">
+<TextView
+    android:id="@+id/alarm_warning_showText"
+    android:layout_centerHorizontal="true"
+   android:layout_marginTop="5dp"
+    android:layout_gravity="center"
+    android:textColor="#fff"
+    android:text="有3条新的预警消息点击刷新"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+        </searchproject.php.yisa.chengyansy.view.ExpandLayout>
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/alarm_warning_loading"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+android:id="@+id/alarm_warning_loading_img"
+            android:background="@drawable/monitor"
+            android:layout_marginTop="43dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp" />
+
+        <TextView
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="18dp"
+            android:text="告警点位实时监控中......"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/alarm_nodate"
+       android:layout_marginLeft="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="42dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/nodata"
+            android:layout_width="112dp"
+            android:layout_height="112dp" />
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="18dp"
+            android:text="请先设置告警点位"
+            android:textColor="#999999"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <searchproject.php.yisa.chengyansy.view.RefreshRecyclerView
+
+        android:id="@+id/alarm_warning_rv"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp">
+
+    </searchproject.php.yisa.chengyansy.view.RefreshRecyclerView>
+</RelativeLayout>
+</LinearLayout>

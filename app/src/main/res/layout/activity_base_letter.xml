@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/toobar_brand"></include>
+    <!--搜索框-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+
+            android:id="@+id/mListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"/>
+
+        <!--字母提示-->
+        <TextView
+            android:id="@+id/tvToast"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:alpha="0.5"
+            android:background="@drawable/toast_bg"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"
+            android:visibility="gone"/>
+
+        <!--字母导航-->
+        <searchproject.php.yisa.chengyansy.view.LettersView
+            android:layout_marginTop="54dp"
+            android:id="@+id/mLettersView"
+            android:layout_width="12dp"
+            android:layout_height="434dp"
+            android:layout_gravity="right"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.5"
+        android:background="@drawable/search_bg">
+
+
+        <ImageView
+            android:id="@+id/tv_cancel"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/titlebar_cancel"
+            android:visibility="gone"/>
+
+        <EditText
+
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:hint="请输入联系人"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:layout_alignParentTop="true"
+            />
+
+
+    </RelativeLayout>
+
+    <!--列表-->
+</LinearLayout>

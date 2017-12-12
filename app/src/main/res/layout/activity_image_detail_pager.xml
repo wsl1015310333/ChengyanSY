@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <searchproject.php.yisa.chengyansy.PictureDialog.HackyViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black" />
+
+    <Button
+        android:layout_marginLeft="8dp"
+        android:id="@+id/indicator"
+        android:text="以图搜车"
+        android:layout_width="345dp"
+        android:layout_height="49dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="45dp"
+        android:background="#af1976D2"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</FrameLayout>

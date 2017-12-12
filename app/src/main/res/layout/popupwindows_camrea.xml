@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="vertical">
+    <!--//使用shape画出圆角矩形，边框为为灰色，背景为白色。颜色不要再线性布局中设置，也会掩盖圆角矩形。-->
+    <LinearLayout
+        android:padding="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:background="@drawable/popwindow_bg"
+    android:orientation="vertical">
+    <!--//宽不能设为match_parent,否则外层的圆角矩形会被遮盖。-->
+       <LinearLayout
+           android:orientation="vertical"
+           android:id="@+id/pop_camera"
+           android:layout_width="match_parent"
+           android:layout_height="40dp">
+           <TextView
+               android:layout_marginTop="10dp"
+               android:layout_gravity="center"
+        android:id="@+id/takePhoto"
+       android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+    android:text="拍  照"
+    />
+       </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        />
+        <LinearLayout
+            android:id="@+id/pop_openImage"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+    <TextView
+
+        android:layout_gravity="center"
+        android:id="@+id/openPhotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"
+        android:text="打开相册"
+        />
+        </LinearLayout>
+
+</LinearLayout>
+<LinearLayout
+android:padding="2dp"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center_horizontal"
+android:layout_marginTop="15dp"
+android:background="@drawable/popwindow_bg"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/pop_cancel"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+<TextView
+    android:layout_marginTop="10dp"
+    android:layout_gravity="center"
+android:id="@+id/cancel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="18dp"
+android:text="取消"
+    />
+    </LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>

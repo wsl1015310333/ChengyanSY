@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="169dp"
+        android:layout_height="183dp">
+        <ImageView
+            android:id="@+id/search_Imgperson"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="8dp"
+            android:background="#1B82D2"
+            android:layout_width="153dp"
+            android:layout_height="113dp" />
+        <LinearLayout
+android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#353535"
+                android:layout_marginLeft="22px"
+                android:textSize="24px"
+                android:text="刘泽明"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+       <ImageView
+           android:layout_marginTop="4px"
+           android:layout_marginLeft="150px"
+           android:background="@drawable/similar"
+           android:layout_width="20px"
+           android:layout_height="24px" />
+            <TextView
+
+                android:layout_marginLeft="10px"
+                android:textSize="24px"
+                android:text="85%"
+                android:textColor="#FE4D3D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="10px"
+            android:textScaleX="1.3"
+            android:textColor="#353535"
+            android:textSize="24px"
+            android:layout_marginLeft="22px"
+            android:text="230221444565596547"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

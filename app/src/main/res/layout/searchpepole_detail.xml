@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toobar"></include>
+    <LinearLayout
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/spd_img"
+            android:background="#aaaaaa"
+            android:layout_width="match_parent"
+            android:layout_height="209dp" />
+
+        <LinearLayout
+            android:layout_marginTop="14px"
+            android:orientation="vertical"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            android:background="#fff"
+            android:layout_width="345dp"
+            android:layout_height="230dp">
+
+
+            <LinearLayout
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓名 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/spd_readname"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="刘泽明 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="13dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="身份证号 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/spd_idCard"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="370281199512021456  "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="13dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="家庭住址 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/spd_place"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="长江中路 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="13dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="所在人员库 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/spd_iddetail"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="二代身份证库"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="13dp"
+                android:background="#eeeeee"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否为布控人员 : "
+                    android:textColor="#999999"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/spd_isalarm"
+                    android:textColor="#353535"
+                    android:textSize="14dp"
+                    android:text="否 "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

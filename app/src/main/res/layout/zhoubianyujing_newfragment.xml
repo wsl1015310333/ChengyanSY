@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="689px"
+        android:layout_height="97px"
+        android:layout_marginLeft="15px"
+        android:layout_marginTop="15px"
+        android:background="#fff"
+ android:elevation="2dp"
+        android:orientation="horizontal"></LinearLayout>
+    <LinearLayout
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:id="@+id/weidu"
+        android:background="#af1976D2"
+        android:layout_width="match_parent"
+        android:layout_height="57px">
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:background="@drawable/monitor"
+                android:layout_marginTop="86px"
+                android:layout_width="220px"
+                android:layout_height="220px" />
+
+            <TextView
+                android:layout_marginLeft="13px"
+                android:layout_marginTop="35px"
+                android:text="告警点位实时监控中......"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="83px"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@drawable/nodata"
+                android:layout_width="223px"
+                android:layout_height="223px" />
+            <TextView
+                android:layout_marginLeft="15px"
+                android:layout_marginTop="35px"
+                android:text="请先设置告警点位"
+                android:textColor="#999999"
+                android:textSize="24px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <searchproject.php.yisa.chengyansy.view.RefreshRecyclerView
+            android:visibility="gone"
+            android:background="#ffff11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15px">
+
+        </searchproject.php.yisa.chengyansy.view.RefreshRecyclerView>
+    </RelativeLayout>
+</RelativeLayout>

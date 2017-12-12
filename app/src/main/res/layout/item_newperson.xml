@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:layout_marginRight="2dp"
+    android:layout_marginBottom="7dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/search_Imgperson"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="90dp" />
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+android:layout_marginTop="5dp"
+                android:id="@+id/person_name"
+                android:textColor="#353535"
+                android:layout_marginLeft="14dp"
+                android:textSize="14dp"
+                android:text="刘泽明"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="75dp"
+                android:background="@drawable/similar"
+                android:layout_width="16dp"
+                android:layout_height="18dp" />
+            <TextView
+                android:layout_marginTop="5dp"
+android:id="@+id/person_num"
+                android:layout_marginLeft="10px"
+                android:textSize="14dp"
+                android:text="85%"
+                android:textColor="#FE4D3D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/person_num1"
+                android:textSize="14dp"
+                android:text="%"
+                android:textColor="#FE4D3D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="5px"
+android:scaleX="1.2"
+        android:textColor="#353535"
+        android:textSize="14dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginBottom="17dp"
+        android:text="230221444565596547"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/person_idcard" />
+
+</LinearLayout>

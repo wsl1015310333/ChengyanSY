@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:navigationContentDescription="nihao"
+    android:layoutMode="opticalBounds"
+    android:navigationIcon="@android:drawable/ic_media_play"
+    android:background="#393A3F"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+    android:minHeight="?attr/actionBarSize">
+<LinearLayout
+
+    android:id="@+id/img_return"
+    android:orientation="horizontal"
+    android:layout_width="60dp"
+    android:layout_height="30dp">
+    <ImageButton
+
+        android:layout_gravity="center"
+android:clickable="false"
+        android:background="@drawable/login_return"
+        android:layout_width="16dp"
+        android:layout_height="25dp" />
+</LinearLayout>
+
+       <TextView
+           android:textColor="#ffffff"
+           android:id="@+id/toolbar_title"
+           android:textSize="16dp"
+           android:layout_gravity="center"
+           android:layout_width="wrap_content"
+           android:text="请选择车辆型号"
+           android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="right"
+android:id="@+id/toolbar_comfirm"
+        android:layout_width="40dp"
+        android:layout_height="20dp">
+        <TextView
+            android:textSize="14dp"
+            android:text="确认"
+            android:textColor="#1976D2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <!--<ImageView-->
+        <!--android:id="@+id/setting_img"-->
+       <!---->
+        <!--android:layout_gravity="right"-->
+        <!--android:layout_width="63px"-->
+        <!--android:layout_height="63px"-->
+        <!--android:background="@drawable/titile_setting"-->
+        <!--/>-->
+
+</android.support.v7.widget.Toolbar>

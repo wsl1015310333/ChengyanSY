@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>设置预警点位</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui"/>
+  <meta name="full-screen" content="yes">
+  <meta name="x5-fullscreen" content="true">
+  <link rel="stylesheet" href="tmap.css">
+  <style>
+    *{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: Roboto, Lato, sans-serif;
+      font-size: 14px;
+      color: #333;
+    }
+    a{
+      color: #333;
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+    html,body,.t-map,#map{
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .map-bottom{
+      background-color: rgba(57, 58, 63, .8);
+      width: 100%;
+      height: 56px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    .map-bottom-body{
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      height: 100%;
+    }
+    .map-bottom-body .text{
+      flex-grow: 1;
+      text-align: center;
+      padding-top: 8px;
+    }
+    .map-bottom-body .text .text-dist{
+      font-size: 18px;
+      color: #fff;
+    }
+    .map-bottom-body .text .text-static{
+      font-size: 12px;
+      color: #fff;
+    }
+    .map-bottom-body .text .num-color{
+      color: #fe4d3d;
+    }
+    .map-bottom-body .btn{
+      width: 88px;
+      height: 100%;
+      background-color: #393A3F;
+      flex-grow: 0;
+    }
+    .map-bottom-body .btn a{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      line-height: 56px;
+      text-align: center;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .map-bottom .map-bottom-list{
+      position: absolute;
+      bottom: 56px;
+      width: 100%;
+      max-height: 185px;
+      line-height: 24px;
+      background-color: #fff;
+      display: none;
+      overflow-y: scroll;
+    }
+    .map-bottom .map-bottom-list .header-li{
+      padding: 3px 6px;
+    }
+    .map-bottom .map-bottom-list .clear-all{
+      color: #1976d2;
+      float: right;
+      padding: 0 6px;
+    }
+    .map-bottom .map-bottom-list .li{
+      border-bottom: 1px solid #ddd;
+      padding: 3px 12px;
+    }
+    .map-bottom .map-bottom-list .delete{
+      color: #fe4d3d;
+      float: right;
+      padding: 0 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="t-map">
+    <div id="map"></div>
+  </div>
+  <div class="map-bottom">
+    <div class="map-bottom-body">
+      <div class="text">
+        <div class="text-dist">已选择 <span class="num-color" id="pickedNum">0</span> 个预警点位</div>
+        <div class="text-static">周边预警最多允许选择 <span class="num-color">10</span> 个预警点位</div>
+      </div>
+      <div class="btn">
+        <a id="affirmBtn" href="javascript:;">确定</a>
+      </div>
+    </div>
+    <div class="map-bottom-list">
+      <div class="header-li">预警点位名称 <a class="clear-all" id="clearAll" href="javascript:;">清除所有预警点位</a></div>
+      <div class="body-li">
+        <!--js插入-->
+        <!--<div class="li">1111111 <a class="delete" href="javascript:;">删除</a></div>-->
+        <!--<div class="li">2222222 <a class="delete" href="javascript:;">删除</a></div>-->
+      </div>
+    </div>
+  </div>
+  <script src="tmap.js"></script>
+  <script>
+    // console.log(tmapHost)
+    // 配置项
+    var map = {
+      minZoom: 12,
+      maxZoom: 18,
+      zoom: 14,
+      center: [108.3547,21.6871],
+      // url: 'http://10.50.235.37:8088/api/get_view_points'
+       url: 'http://' + tmapHost + '/api/get_view_points',
+      urlConvert: 'http://' + tmapHost + '/api/convert_points'
+     //  url: 'http://' + tmapHost + ':10180/api/get_view_points',
+     // urlConvert: 'http://' + tmapHost + ':10180/api/convert_points'
+    }
+    var size = new IMAP.Size(24, 23)
+    var offset = new IMAP.Pixel(0, 0)
+    var mapCtrl = {
+      map: null,
+      marker: null,
+      opts: {
+        minZoom: map.minZoom,
+        maxZoom: map.maxZoom,
+        zoom: map.zoom,
+        center: new IMAP.LngLat(map.center[0], map.center[1]),
+        animation: false
+      },
+
+      // iconUrl: 'http://10.50.235.37:8088/static/images/map/',
+      iconUrl: 'http://' + tmapHost + '/static/images/map/',
+     //iconUrl: 'http://' + tmapHost + ':10180/static/images/map/',
+
+      _url: map.url,
+      _urlConvert: map.urlConvert,
+      _sw: '',
+      _ne: '',
+      // 数组
+      markerArr: [], // 用来保存点位以添加到地图上使用
+      pickedIdTextArr: [], // 已选点位id 和 text数组,
+      $affirmBtn: null, // 点位选中确认按钮选择器
+      $pickedNum: null, // 已选点位数量
+      $bottomList: null, // 底部弹出列表选择器
+      $list: null, // 底部列表选择器
+      init: function () {
+        this.$affirmBtn = document.getElementById('affirmBtn')
+        this.$pickedNum = document.getElementById('pickedNum')
+        this.$bottomList = document.querySelector('.map-bottom-list')
+        this.$list = document.querySelector('.body-li')
+        this.setPickedIdText()
+		    // this.getCenterPoint()
+        this.initMap()
+        this.affirmLocation()
+        this.clearAll()
+        this.deleteOne()
+      },
+      getCenterPoint: function () {
+        var _this = this
+        if (navigator.geolocation) {
+          navigator.geolocation.watchPosition(function (position) {
+            console.log(position)
+            if (position.coords) {
+              var _lng = position.coords.longitude
+              var _lat = position.coords.latitude
+              var _lnglat = new IMAP.LngLat(_lng, _lat);
+              if (_this.map) {
+                console.log('定位...')
+                _this.map.setCenter(_lnglat)
+              } else {
+                console.log('设置center...')
+                _this.opts.center = _lnglat
+              }
+            }
+          }, function (error) {
+            console.log(error)
+          }, {
+            enableHighAccuracy: true,
+            maximumAge: 30000,
+            timeout: 10000
+          })
+        }
+      },
+      initMap: function () {
+        var _this = this
+        this.map = new IMAP.Map('map', this.opts)
+        this.map.addEventListener(IMAP.Constants.ZOOM_END, function () {
+          // console.log('缩放')
+          _this.reLoadViewMarker()
+        })
+        this.map.addEventListener(IMAP.Constants.DRAG_END, function () {
+          // console.log('拖拽')
+          _this.reLoadViewMarker()
+        })
+        //
+        if (centerStr !== null) {
+          var _center = [(centerStr.split(',')[0] * 100000 / 100000), (centerStr.split(',')[1] * 100000 / 100000)]
+          _this.handleGeocoder(_center)
+        }
+        // 获取可视区域的点
+        this.getViewPoints()
+        // 加载可视区域的点
+        this.addViewMarkers()
+      },
+      getViewPoints: function () {
+        var _bounds = this.map.getBounds()
+        this._sw = _bounds.southwest.lng + ',' + _bounds.southwest.lat
+        this._ne = _bounds.northeast.lng + ',' + _bounds.northeast.lat
+      },
+      addViewMarkers: function () {
+        var _this = this
+        var xhr = new XMLHttpRequest()
+		
+        xhr.open('get', this._url + '?sw=' + this._sw + '&ne=' + this._ne)
+	
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+              // 成功
+              var data = JSON.parse(xhr.responseText)
+              // console.log(data)
+              _this.addMarker(data)
+			
+            } else {
+              alert('服务器请求失败')
+            }
+          }
+        }
+        xhr.send(null)
+      },
+      addMarker: function (arr) {
+        var _this = this
+        for (var i = 0; i < arr.length; i++) {
+          var opts = new IMAP.MarkerOptions()
+          opts.editable = false
+          opts.anchor = IMAP.Constants.CENTER
+          var tempPickedFlag = false
+          for (var j = 0; j < this.pickedIdTextArr.length; j++) {
+            if (this.pickedIdTextArr[j].id === arr[i].id) {
+              tempPickedFlag = true
+              break
+            }
+          }
+          if (!tempPickedFlag) {
+            opts.icon = new IMAP.Icon(this.iconUrl + arr[i].type + '.png', size, offset)
+          } else {
+            opts.icon = new IMAP.Icon(this.iconUrl + arr[i].type + 'h.png', size, offset)
+          }
+          var lngLat = new IMAP.LngLat(arr[i].lng, arr[i].lat)
+          if (lngLat) {
+            this.marker = new IMAP.Marker(lngLat, opts)
+            // 自定义属性
+            this.marker.id = arr[i].id
+            this.marker.type = arr[i].type
+            this.marker.text = arr[i].text
+            // 加入到markerArr数组
+            this.markerArr.push(this.marker)
+            this.marker.addEventListener(IMAP.Constants.CLICK, function (e) {
+              var isPicked = false
+              var _marker = e.target
+              var tempIdText = null // 如果该点位已选中，点击后排除该点位的时候，使用tempIdText
+              for (var m = 0; m < _this.pickedIdTextArr.length; m++) {
+                if (_this.pickedIdTextArr[m].id === _marker.id) {
+                  isPicked = true
+                  tempIdText = _this.pickedIdTextArr[m]
+                }
+              }
+              // 此点未选中
+              if (!isPicked) {
+                // 如果未选中，判断一下最多可选10个点位
+                if (_this.pickedIdTextArr.length >= 10) {
+                  alert('最多允许选择10个点位')
+                  return false
+                }
+                _this.pickedIdTextArr.push({
+                  id: _marker.id,
+                  text: _marker.text
+                })
+                // 设置选中图标
+                _this.setMarkerIcon(_marker, true)
+                // 将该点位显示到列表中
+                _this.toList(_marker)
+              } else {
+                // 如果选择，再次点击取消选中
+                _this.pickedIdTextArr = _this.pickedIdTextArr.filter(function (f) {
+                  return f !== tempIdText
+                })
+                // 设置取消选中图标
+                _this.setMarkerIcon(_marker, false)
+                // 将该点位从列表中移除
+                _this.leaveList(_marker)
+              }
+            })
+          }
+        }
+        this.map.getOverlayLayer().addOverlays(this.markerArr, false)
+      },
+      /**
+       * m: 点位 marker类型
+       * b: Boolean true：（变为）选中状态 false：取消选中
+       * */
+      setMarkerIcon: function (m, b) {
+        var icon = ''
+        if (b) {
+          icon = new IMAP.Icon(this.iconUrl + m.type + 'h.png', size, offset)
+        } else {
+          icon = new IMAP.Icon(this.iconUrl + m.type + '.png', size, offset)
+        }
+        m.setIcon(icon)
+      },
+      reLoadViewMarker: function () {
+        if (this.markerArr.length > 0) {
+          this.map.getOverlayLayer().clear(this.markerArr)
+          this.markerArr = []
+        }
+        // 获取可视区域的点
+        this.getViewPoints()
+        // 加载可视区域的点
+        this.addViewMarkers()
+      },
+      toList: function (m) {
+        this.$bottomList.style.display = 'block'
+        var liDiv = document.createElement('div')
+        liDiv.setAttribute('class', 'li')
+        liDiv.setAttribute('id', m.id)
+        liDiv.innerHTML = m.text
+        var a = document.createElement('a')
+        a.setAttribute('class', 'delete')
+        a.setAttribute('href', 'javascript:;')
+        a.innerHTML = '删除'
+        liDiv.appendChild(a)
+        this.$list.appendChild(liDiv)
+        this.$pickedNum.innerHTML = this.pickedIdTextArr.length
+      },
+      leaveList: function (m) {
+        var $temp = document.getElementById(m.id)
+        this.$list.removeChild($temp)
+        this.$pickedNum.innerHTML = this.pickedIdTextArr.length
+        if (this.pickedIdTextArr.length <= 0) {
+          this.$bottomList.style.display = 'none'
+        }
+      },
+      affirmLocation: function () {
+        var _this = this
+        this.$affirmBtn.addEventListener('click', function () {
+          if (_this.pickedIdTextArr.length === 0) {
+		     android.ClearAll();
+		      android.showToast();
+            return false
+          }
+          var content = JSON.stringify(_this.pickedIdTextArr)
+          window.localStorage.setItem('markers', content)
+          // -----------------------------
+          android.localStorage(localStorage.getItem('markers'))
+          android.showToast();
+        })
+      },
+      // 初始化加载或者刷新页面的时候，设置已选点位和已选点位列表
+      setPickedIdText: function () {
+        var content = window.localStorage.getItem('markers')
+        if (content) {
+          this.pickedIdTextArr = JSON.parse(content)
+          for (var i = 0; i < this.pickedIdTextArr.length; i++) {
+            this.toList(this.pickedIdTextArr[i])
+          }
+          this.$pickedNum.innerHTML = this.pickedIdTextArr.length
+        }
+      },
+      clearAll: function () {
+
+        var _this = this
+        var $clearAll = document.getElementById('clearAll')
+        $clearAll.addEventListener('click', function () {
+          android.ClearAll();
+          window.localStorage.removeItem('markers')
+          // 取消地图上已选中的点的 选中状态
+          var tempIdArr = []
+          for (var i = 0; i < _this.pickedIdTextArr.length; i++) {
+            tempIdArr.push(_this.pickedIdTextArr[i].id)
+          }
+          for (var j = 0; j < _this.markerArr.length; j++) {
+            if (tempIdArr.indexOf(_this.markerArr[j].id) !== -1) {
+              _this.setMarkerIcon(_this.markerArr[j], false)
+            }
+          }
+          // 移除列表，并 隐藏底部列表弹框
+          _this.$list.innerHTML = ''
+          _this.$bottomList.style.display = 'none'
+          // 清空pickedIdText数组
+          _this.pickedIdTextArr = []
+          // 修改选中点位的数字
+          _this.$pickedNum.innerHTML = _this.pickedIdTextArr.length
+		  
+        })
+      },
+      deleteOne: function () {
+        var _this = this
+        this.$list.addEventListener('click', function (e) {
+          if (e.target.className === 'delete') {
+            var $thisLi = e.target.parentNode
+            var thisId = $thisLi.id
+            var $temp = document.getElementById(thisId)
+            // 删除此列表
+            _this.$list.removeChild($temp)
+            // 改变点位状态
+            for (var i = 0; i < _this.markerArr.length; i++) {
+              if ((_this.markerArr[i].id +'')=== thisId) {
+                _this.setMarkerIcon(_this.markerArr[i], false)
+              }
+            }
+            // 将此点位从pickedIdText中移除
+            _this.pickedIdTextArr = _this.pickedIdTextArr.filter(function (f) {
+              if ((f.id +'')!== thisId) {
+                return true
+              }
+            })
+            // 判断是否隐藏列表弹出框
+            if (_this.pickedIdTextArr.length <= 0) {
+              _this.$bottomList.style.display = 'none'
+            }
+            // 修改点位的数字
+            _this.$pickedNum.innerHTML = _this.pickedIdTextArr.length
+          }
+        })
+      },
+      handleGeocoder: function (c) {
+      var _this = this
+        var xhr = new XMLHttpRequest()
+		
+        xhr.open('get', this._urlConvert + '?coords=' + c[0]+ ',' + c[1] + '&from=1&to=2')
+	
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+              // 成功
+              var data = JSON.parse(xhr.responseText)
+              _this.map.setCenter(new IMAP.LngLat(data.result[0].x, data.result[0].y))			
+            } else {
+              _this.map.setCenter(new IMAP.LngLat(c[0], c[1]))
+            //  alert('服务器11请求失败')
+            }
+          }
+        }
+        xhr.send(null)
+        /*
+        var _this = this
+        this.map.plugin(['IMAP.Geocoder'], function () {
+          var _geocoder = new IMAP.Geocoder()
+          _geocoder.getAddress(new IMAP.LngLat(c[0], c[1]), function (status, result) {
+		  console.log(status)
+            if (status == 0 ) {
+              console.log(result.result[0].location)
+              var _cObj = result.result[0].location
+              _this.map.setCenter(new IMAP.LngLat(_cObj.lng, _cObj.lat))
+            }
+          })
+        })
+        */
+      }
+    }
+    mapCtrl.init()
+  </script>
+</body>
+</html>
