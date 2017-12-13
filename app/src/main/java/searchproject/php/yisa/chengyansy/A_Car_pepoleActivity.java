@@ -27,6 +27,7 @@ import searchproject.php.yisa.chengyansy.Model_All.ACarACrime;
 import searchproject.php.yisa.chengyansy.fragement_carpp.CarPPCCrimeFragment;
 import searchproject.php.yisa.chengyansy.fragement_carpp.CarPPCrimeFragment;
 import searchproject.php.yisa.chengyansy.fragement_carpp.CarPPInfoFragment;
+import searchproject.php.yisa.chengyansy.utils.DensityUtil;
 import searchproject.php.yisa.chengyansy.utils.HttpConnectionUtils;
 import searchproject.php.yisa.chengyansy.utils.ResulutionJson;
 
@@ -56,6 +57,7 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
     CarPPInfoFragment carPPInfoFragment=new CarPPInfoFragment();
     CarPPCCrimeFragment carPPCCrimeFragment=new CarPPCCrimeFragment();
     CarPPCrimeFragment carPPCrimeFragment=new CarPPCrimeFragment();
+    int i=0;
     private Handler handler =new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -67,15 +69,46 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
                        a_car_pepole_progressbar.setVisibility(View.GONE);
                        a_car_pepole_fragment.setVisibility(View.VISIBLE);
                        ACarACrime aCarACrime= ResulutionJson.aCarACrime(result);
-
+                     if(aCarACrime==null){
+                         Log.e("aCarACrim","NUll");
+                     }
                        fm = getFragmentManager();
                        ft = fm.beginTransaction();
                        Bundle bundle=new Bundle();
+                       bundle.putString("isNull","no");
                        bundle.putSerializable("aCarACrime",aCarACrime);
                        bundle.putString("plate",plate);
                        carPPInfoFragment.setArguments(bundle);
-                       ft.add(R.id.a_car_pepole_fragment, carPPInfoFragment);
-                       ft.commit();
+                       carPPCrimeFragment.setArguments(bundle);
+                       if(i==0) {
+                           ft.add(R.id.a_car_pepole_fragment, carPPInfoFragment);
+                           //   ft.add(R.id.a_car_pepole_fragment, carPPCrimeFragment);
+                       }
+                       else if(i==1){
+                           ft.add(R.id.a_car_pepole_fragment, carPPCrimeFragment);
+                       }else if(i==2){
+                           ft.add(R.id.a_car_pepole_fragment, carPPCCrimeFragment);
+                       }
+                           ft.commit();
+                    break;
+                case 400:
+                    Log.e("acar","a");
+                    a_car_pepole_progressbar.setVisibility(View.GONE);
+                    a_car_pepole_fragment.setVisibility(View.VISIBLE);
+                   // ACarACrime aCarACrime= ResulutionJson.aCarACrime(result);
+//                    if(aCarACrime==null){
+//                        Log.e("aCarACrim","NUll");
+//                    }
+                    fm = getFragmentManager();
+                    ft = fm.beginTransaction();
+                    Bundle bundleNull=new Bundle();
+                    bundleNull.putString("isNull","yes");
+                    bundleNull.putString("plate",plate);
+                    carPPInfoFragment.setArguments(bundleNull);
+                    carPPCrimeFragment.setArguments(bundleNull);
+                    ft.add(R.id.a_car_pepole_fragment, carPPInfoFragment);
+                    //   ft.add(R.id.a_car_pepole_fragment, carPPCrimeFragment);
+                    ft.commit();
                     break;
 
             }
@@ -84,6 +117,7 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
     String plate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        CrashApplication.mylist.add(A_Car_pepoleActivity.this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a__car_pepole);
         initTool();
@@ -108,22 +142,27 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
                 HashMap hashMap=new HashMap();
                 hashMap.put("plate_number",plate);
                 hashMap.put("plate_type_id",plateType);
-             //   final String result =  HttpConnectionUtils.sendGETRequest(HttpConnectionUtils.ipport+"/api/ycyd",hashMap,null);
+               final String result =  HttpConnectionUtils.sendGETRequest(HttpConnectionUtils.ipport+"/api/ycyd",hashMap,null);
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                final String result=initJson();
+             //final String result=initJson();
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         Toast.makeText(A_Car_pepoleActivity.this,result+"",Toast.LENGTH_SHORT).show();
                     }
                 });
-                if(result.length()>10){
+                if(result.length()>100){
                     Message message=handler.obtainMessage();
                     message.what=200;
+                    message.obj=result;
+                    handler.sendMessage(message);
+                }else {
+                    Message message=handler.obtainMessage();
+                    message.what=400;
                     message.obj=result;
                     handler.sendMessage(message);
                 }
@@ -148,7 +187,7 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
         });
     }
 private void initPic(String pic){
-    Picasso.with(this).load(pic).into(a_car_pepole_carimg);
+    Picasso.with(this).load(pic).resize(DensityUtil.dip2px(this,360),DensityUtil.dip2px(this,208)).into(a_car_pepole_carimg);
 }
     @Override
     public void init() {
@@ -192,22 +231,31 @@ private void initPic(String pic){
         setBackgroundColorById(view.getId());
         fm = getFragmentManager();
         ft = fm.beginTransaction();
-        if (a_car_pepole_progressbar.getVisibility() != View.VISIBLE) {
+
             switch (view.getId()) {
                 case R.id.a_car_pepole_lginfo:
-                    lginfo();
+                    if (a_car_pepole_progressbar.getVisibility() != View.VISIBLE) {
+                        lginfo();
+                    }
+                    i=0;
                     break;
                 case R.id.a_car_pepole_ppCrime:
-                    ppCrime();
+                    if (a_car_pepole_progressbar.getVisibility() != View.VISIBLE) {
+                        ppCrime();
+                    }
+                    i=1;
                     break;
                 case R.id.a_car_pepole_carCrime:
-                    carCrime();
+                    if (a_car_pepole_progressbar.getVisibility() != View.VISIBLE) {
+                        carCrime();
+                    }
+                    i=2;
                     break;
 
             }
             ft.commit();
         }
-    }
+
     public void lginfo(){
         //toottv.setText("车牌搜车");
         if (carPPInfoFragment == null) {
@@ -307,17 +355,98 @@ private void initPic(String pic){
         }
     }
     public String initJson(){
-        String result="{\n" +
-                "  \"czxm\": \"和进水\",\n" +
-                "  \"lxdh\": \"13853892375\",\n" +
-                "  \"zjhm\": \"370920195202040010\",\n" +
-                "  \"zjlx\": \"居民身份证(A)\",\n" +
-                "  \"sdry\": 0,\n" +
-                "  \"ztry\": 0,\n" +
-                "  \"qkry\": 0,\n" +
-                "  \"zdry\": 0,\n" +
-                "  \"sary\": 0\n" +
-                "}";
+        String reslt="fdsafs";
+      String result ="\n" +
+              "{\n" +
+              "  \"HLJ\": \"1290\",\n" +
+              "  \"JYHGBZBH\": \"173732576868\",\n" +
+              "  \"ZHKRKSJ\": \"2017-03-01 13:36:01.0\",\n" +
+              "  \"LSH\": \"1J41201381400\",\n" +
+              "  \"SFZMMC\": \"A\",\n" +
+              "  \"BXZZRQ\": \"2017-08-25 00:00:00.0\",\n" +
+              "  \"GCJK\": \"A\",\n" +
+              "  \"DJZSBH\": \"370002933689\",\n" +
+              "  \"FDJRQ\": \"2004-12-01 10:11:10\",\n" +
+              "  \"SYQ\": \"2\",\n" +
+              "  \"XGZL\": \"ABMJZ\",\n" +
+              "  \"ZJ\": \"2350\",\n" +
+              "  \"CLSBDH\": \"106391\",\n" +
+              "  \"SYR\": \"和进水\",\n" +
+              "  \"CLXH\": \"SC6371\",\n" +
+              "  \"SFZMHM\": \"370920195202040010\",\n" +
+              "  \"RLZL\": \"A\",\n" +
+              "  \"PZBH1\": \"0009332\",\n" +
+              "  \"FZRQ\": \"2004-12-01 10:11:01\",\n" +
+              "  \"ZS\": \"2\",\n" +
+              "  \"ZT\": \"A\",\n" +
+              "  \"ZXXS\": \"1\",\n" +
+              "  \"SYXZ\": \"A\",\n" +
+              "  \"YZBM1\": \"271200\",\n" +
+              "  \"FPRQ\": \"2004-12-01 10:10:44\",\n" +
+              "  \"CCRQ\": \"2004-06-21 00:00:00\",\n" +
+              "  \"GLBM\": \"370900000400\",\n" +
+              "  \"YTSX\": \"9\",\n" +
+              "  \"QZBFQZ\": \"2099-12-31 00:00:00\",\n" +
+              "  \"ZZCMC\": \"长安汽车（集团）有限责任公司\",\n" +
+              "  \"FZJG\": \"鲁J\",\n" +
+              "  \"YXQZ\": \"2017-12-31 00:00:00\",\n" +
+              "  \"NSZMBH\": \"370115590\",\n" +
+              "  \"JYW\": \"396A05030E0783958286677B050601097C62027A7D705B2073402C4359185057421A040476060405050C7F0B0274770A000102090B035B4070455A435B1D522F37\",\n" +
+              "  \"ZZXZQH\": \"370982\",\n" +
+              "  \"BZCS\": \"0\",\n" +
+              "  \"ZSXZQH\": \"370982\",\n" +
+              "  \"DYBJ\": \"0\",\n" +
+              "  \"YXH\": \"1\",\n" +
+              "  \"FDJXH\": \"JL474Q\",\n" +
+              "  \"ZSXXDZ\": \"山东省新泰市青云街道办事处市副食品公司宿舍\",\n" +
+              "  \"CLPP1\": \"长安\",\n" +
+              "  \"FDJH\": \"A24478\",\n" +
+              "  \"HPZL\": \"02\",\n" +
+              "  \"NSZM\": \"1\",\n" +
+              "  \"LXDH\": \"7213005\",\n" +
+              "  \"CCDJRQ\": \"2004-12-01 10:10:44\",\n" +
+              "  \"ZQYZL\": \"0\",\n" +
+              "  \"XH\": \"37090004258844\",\n" +
+              "  \"CLYT\": \"P1\",\n" +
+              "  \"HDZK\": \"7\",\n" +
+              "  \"XZQH\": \"370982\",\n" +
+              "  \"GXRQ\": \"2016-12-23 18:39:50\",\n" +
+              "  \"HPHM\": \"JD5693\",\n" +
+              "  \"LTGG\": \"165/70R13LT\",\n" +
+              "  \"JBR\": \"郭雪梅\",\n" +
+              "  \"BDJCS\": \"0\",\n" +
+              "  \"src\": \"jdc\",\n" +
+              "  \"HDFS\": \"A\",\n" +
+              "  \"ZZXXDZ\": \"山东省新泰市青云街道办事处市副食品公司宿舍\",\n" +
+              "  \"CLLX\": \"K31\",\n" +
+              "  \"CLLY\": \"1\",\n" +
+              "  \"FHGZRQ\": \"2013-12-03 15:01:22\",\n" +
+              "  \"DJRQ\": \"2016-12-23 00:00:00\",\n" +
+              "  \"V_DEALFLAG\": \"0\",\n" +
+              "  \"CWKC\": \"3725\",\n" +
+              "  \"BPCS\": \"0\",\n" +
+              "  \"LTS\": \"4\",\n" +
+              "  \"LLPZ1\": \"A\",\n" +
+              "  \"PL\": \"1310\",\n" +
+              "  \"CWKK\": \"1560\",\n" +
+              "  \"ZZL\": \"1580\",\n" +
+              "  \"CWKG\": \"1895\",\n" +
+              "  \"QLJ\": \"1280\",\n" +
+              "  \"ZBZL\": \"1000\",\n" +
+              "  \"ZZG\": \"156\",\n" +
+              "  \"GL\": \"60\",\n" +
+              "  \"SJHM\": \"13853892375\",\n" +
+              "  \"CSYS\": \"B\",\n" +
+              "  \"sort\": 1482489590,\n" +
+              "  \"hpzl\": \"小型汽车号牌(02)\",\n" +
+              "  \"cllx\": \"小型普通客车(K31)\",\n" +
+              "  \"zjlx\": \"居民身份证(A)\",\n" +
+              "  \"sdry\": 0,\n" +
+              "  \"ztry\": 0,\n" +
+              "  \"qkry\": 0,\n" +
+              "  \"zdry\": 0,\n" +
+              "  \"sary\": 0\n" +
+              "}";
         return result;
     }
 }
