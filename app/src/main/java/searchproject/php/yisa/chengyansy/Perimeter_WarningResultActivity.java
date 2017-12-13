@@ -84,11 +84,17 @@ public class Perimeter_WarningResultActivity extends AppCompatActivity {
                     break;
                 case 300:
                     Intent A_Car_pepoleintent=new Intent(Perimeter_WarningResultActivity.this,A_Car_pepoleActivity.class);
+                    Bundle ACarbundle=new Bundle();
+                    ACarbundle.putString("plate",read_waring_detailJson.getPlate());
+                    ACarbundle.putString("pic",read_waring_detailJson.getPic());
+                    ACarbundle.putString("plateType","4");
+                    A_Car_pepoleintent.putExtras(ACarbundle);
                     startActivity(A_Car_pepoleintent);
                     break;
             }
         }
     };
+    Read_waring_detailJson read_waring_detailJson;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,7 +112,7 @@ public class Perimeter_WarningResultActivity extends AppCompatActivity {
 
         Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
-        Read_waring_detailJson  read_waring_detailJson=(Read_waring_detailJson)bundle.getSerializable("result");
+    read_waring_detailJson=(Read_waring_detailJson)bundle.getSerializable("result");
         textView.setText(read_waring_detailJson.getPlate().toString());
         initView();
         initView(read_waring_detailJson);
