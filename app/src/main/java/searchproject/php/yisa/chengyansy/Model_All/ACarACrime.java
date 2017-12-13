@@ -49,7 +49,7 @@ public class ACarACrime implements Serializable {
    private String  bhlhszcs;
    private String  bhlhpcs;
    private String  bhlzscs;
-   private String   glbm;
+   private String  glbm;
 
 
     public String getClyt() {
