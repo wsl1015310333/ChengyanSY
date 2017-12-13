@@ -64,6 +64,7 @@ String pic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        CrashApplication.mylist.add(CarOfSearch_DetailActivity.this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carofsearch_detailactivity);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
