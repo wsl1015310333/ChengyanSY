@@ -2,6 +2,8 @@ package searchproject.php.yisa.chengyansy.utils;
 
 
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,19 +65,58 @@ public class ResulutionJson {
 
         return car_resultJsons;
     }
-    public static ACarACrime aCarACrime(String json){
+    public static ACarACrime
+    aCarACrime(String json){
         try {
             JSONObject jsonObject=new JSONObject(json);
             ACarACrime aCarACrime=new ACarACrime();
             aCarACrime.setType(jsonObject.getString("zjlx"));
-            aCarACrime.setName(jsonObject.getString("czxm"));
-            aCarACrime.setTel(jsonObject.getString("lxdh"));
-            aCarACrime.setNumCard(jsonObject.getString("zjhm"));
+            //aCarACrime.setName(jsonObject.getString("czxm"));
+            aCarACrime.setName(jsonObject.getString("SYR"));
+            Log.e("SYR",jsonObject.getString("SYR"));
+            aCarACrime.setTel(jsonObject.getString("JYHGBZBH"));
+            aCarACrime.setNumCard(jsonObject.getString("SFZMHM"));
             aCarACrime.setIsDug(jsonObject.getString("sdry"));
             aCarACrime.setIscrimeRecord(jsonObject.getString("sary"));
-            aCarACrime.setIsfocal("zdry");
-            aCarACrime.setIsFugitive("ztry");
-            aCarACrime.setIsInvolved("sary");
+            aCarACrime.setIsfocal(jsonObject.getString("zdry"));
+            aCarACrime.setIsFugitive(jsonObject.getString("ztry"));
+            aCarACrime.setIsInvolved(jsonObject.getString("sary"));
+            aCarACrime.setCllx(jsonObject.getString("cllx"));
+            aCarACrime.setClxh(jsonObject.getString("CLXH"));
+            aCarACrime.setHmzl(jsonObject.getString("hpzl"));
+
+
+
+
+            aCarACrime.setColor(jsonObject.getString("CSYS"));
+            aCarACrime.setClyt(jsonObject.getString("CLYT"));
+            aCarACrime.setClsbdh(jsonObject.getString("CLSBDH"));
+            aCarACrime.setDjzsbh(jsonObject.getString("DJZSBH"));
+            aCarACrime.setDabh(jsonObject.getString("GLBM"));
+            aCarACrime.setSyxz(jsonObject.getString("SYXZ"));
+            aCarACrime.setHdfs(jsonObject.getString("HDFS"));
+            aCarACrime.setSyqxz(jsonObject.getString("SYQ"));
+            aCarACrime.setJdczt(jsonObject.getString("ZT"));
+            aCarACrime.setDybj(jsonObject.getString("DYBJ"));
+            aCarACrime.setZjdjrq("-");//最近定检日期
+            aCarACrime.setYcyxqz("-");//检测有效日期
+            aCarACrime.setQzbfqz(jsonObject.getString("QZBFQZ"));
+            aCarACrime.setZsxxdz(jsonObject.getString("ZSXXDZ"));
+            aCarACrime.setZzxxdz(jsonObject.getString("ZZXXDZ"));
+            aCarACrime.setZzjzzm("-");//
+            aCarACrime.setCcdjrq(jsonObject.getString("CCDJRQ"));
+            aCarACrime.setBxzzrq(jsonObject.getString("BXZZRQ"));
+            aCarACrime.setGxsj(jsonObject.getString("GXRQ"));
+            aCarACrime.setFprq(jsonObject.getString("FPRQ"));
+            aCarACrime.setFhjzrq(jsonObject.getString("FHGZRQ"));
+
+            aCarACrime.setFdjzsrq(jsonObject.getString("FDJRQ"));
+            aCarACrime.setBhlhszcs(jsonObject.getString("BZCS"));
+            aCarACrime.setBhlhpcs(jsonObject.getString("BPCS"));
+            aCarACrime.setBhlzscs(jsonObject.getString("FPRQ"));
+            aCarACrime.setFhjzrq(jsonObject.getString("BDJCS"));
+            aCarACrime.setGlbm(jsonObject.getString("GLBM"));
+
             return aCarACrime;
         } catch (JSONException e) {
             e.printStackTrace();
