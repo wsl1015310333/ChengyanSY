@@ -120,6 +120,7 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
         CrashApplication.mylist.add(A_Car_pepoleActivity.this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a__car_pepole);
+
         initTool();
         init();
         initData();
@@ -127,7 +128,8 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
              plate = bundle.getString("plate");
-            String plateType = bundle.getString("plateType");
+            toottv.setText(plate+"（蓝色）");
+             String plateType = bundle.getString("plateType");
             String img = bundle.getString("pic");
             Log.e("acap",plate+plateType+img);
             initPic(img);//显示图片
@@ -143,18 +145,13 @@ public class A_Car_pepoleActivity extends BaseActivity implements View.OnClickLi
                 hashMap.put("plate_number",plate);
                 hashMap.put("plate_type_id",plateType);
                final String result =  HttpConnectionUtils.sendGETRequest(HttpConnectionUtils.ipport+"/api/ycyd",hashMap,null);
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-             //final String result=initJson();
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(A_Car_pepoleActivity.this,result+"",Toast.LENGTH_SHORT).show();
-                    }
-                });
+            // final String result=initJson();
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Toast.makeText(A_Car_pepoleActivity.this,result+"",Toast.LENGTH_SHORT).show();
+//                    }
+//                });
                 if(result.length()>100){
                     Message message=handler.obtainMessage();
                     message.what=200;
