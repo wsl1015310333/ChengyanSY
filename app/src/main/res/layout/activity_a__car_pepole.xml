@@ -51,7 +51,7 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/a_car_pepole_carimg"
-                android:background="#1976d2"
+                android:background="#fff"
                 android:layout_width="match_parent"
                 android:layout_height="208dp" />
             <!--<TextView-->
