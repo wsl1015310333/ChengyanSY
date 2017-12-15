@@ -27,12 +27,14 @@ import java.util.UUID;
  */
 
 public class HttpConnectionUtils {
-    public static boolean isNeedSubString=false;
-    public static int subNumber=25;//截取图片长度
+    public static boolean isNeedSubString=true;
+    public static int subNumber=24;//截取图片长度
     public static String Ln="36.8667973600,118.7787162300";//经纬度
     public static Boolean isNormal=false;//是否为正常模式 true正常模式(能直接转ip） false非正常模式（需要转换IP）
-    public static String  ipport="10.49.222.84:8088"; //本地 //192.168.2.86:3000 http://10.50.235.37:8088    10.52.195.9:38088 127.0.0.1:10058 烟台
-    public static String  ip="10.49.222.84";
+//    public static String  ipport="10.49.222.84:8088"; //本地 //192.168.2.86:3000 http://10.50.235.37:8088    10.52.195.9:38088 127.0.0.1:10058 烟台
+//    public static String  ip="10.49.222.84";
+public static String  ipport="192.168.1.177:8988"; //本地 //192.168.2.86:3000 http://10.50.235.37:8088    10.52.195.9:38088 127.0.0.1:10058 烟台
+    public static String  ip="192.168.1.177";
     public static String  bkport=":2124";
     public static String  zbport=":2125";
   //  public static String  ipport="192.168.20.2:10180"; //192.168.2.86:3000 http://10.50.235.37:8088    10.52.195.9:38088 127.0.0.1:10058
