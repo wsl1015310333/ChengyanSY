@@ -39,7 +39,7 @@
             android:layout_height="112dp" />
         <TextView
 android:layout_marginLeft="134dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             android:text="暂无告警信息"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
