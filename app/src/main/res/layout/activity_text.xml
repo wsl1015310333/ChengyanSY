@@ -131,7 +131,7 @@ android:background="#ffffffff"
             <TextView
                 android:id="@+id/drawlayout_name"
                 android:layout_marginLeft="15dp"
-                android:text="刘泽明"
+                android:text="张懋源"
                 android:textColor="#353535"
                 android:layout_marginTop="5dp"
                 android:textSize="14dp"
